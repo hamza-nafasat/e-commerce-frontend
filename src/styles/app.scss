@@ -1,0 +1,304 @@
+$white: rgb(255, 255, 255);
+$whiteSmoke: rgb(245, 245, 245);
+$gray: rgb(204, 204, 204);
+$black: rgb(46, 46, 46);
+$purple: rgb(192, 15, 228);
+$blue: rgb(0, 104, 136);
+$green: rgb(0, 195, 0);
+$red: rgb(255, 0, 0);
+$blueButton: rgb(41, 130, 233);
+$blueButtonH: rgb(3, 100, 190);
+
+@import "mixin.scss";
+// UNIVERSAL CSS
+// =============
+:root {
+    font-family: Inter, system-ui, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: $whiteSmoke;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+@import "loader.scss";
+@import "./home.scss";
+@import "./cart.scss";
+@import "./shipping.scss";
+@import "./login.scss";
+@import "./search.scss";
+@import "./admin/dashboard.scss";
+@import "./admin/products.scss";
+@import "./admin/charts.scss";
+@import "./admin/dashboardApp.scss";
+@import "./admin/mediaQueries.scss";
+
+// COLORS CLASSES
+// ==============
+
+.red {
+    color: $red;
+}
+.purple {
+    color: $purple;
+}
+.green {
+    color: $green;
+}
+.container {
+    max-width: 90rem;
+    height: 100vh;
+    width: 100%;
+    margin: auto;
+    overflow: auto;
+    > h2 {
+        @include heading;
+        margin: 1rem 0;
+        text-align: center;
+    }
+}
+
+// HEADER
+// ======
+.header {
+    @include flex(row, space-between, center, 1rem);
+    padding: 1rem;
+    min-width: 17vw;
+    max-height: 2rem;
+    position: fixed;
+    z-index: 40;
+    top: 0;
+    right: 0;
+    border-radius: 5px;
+    background-color: $white;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    > a,
+    > button {
+        border: none;
+        cursor: pointer;
+        color: $black;
+        background-color: transparent;
+        margin-top: 0.3rem;
+        font-size: 1.6rem;
+        &:hover {
+            color: $blueButtonH;
+        }
+        &:active {
+            opacity: 0.7;
+        }
+    }
+    > button {
+        margin-top: 0.3rem;
+    }
+    > dialog {
+        border: 1px solid $gray;
+        border-radius: 5px;
+        padding: 0.7rem;
+        width: 8rem;
+        position: absolute;
+        top: 10vh;
+        left: calc(100% - 8rem);
+        z-index: 20;
+        > div {
+            @include flex(column, flex-start, center, 0.5rem);
+            > a {
+                @include flex;
+                @include button();
+                padding: 0.3rem 1rem;
+            }
+            > button {
+                @include flex;
+                @include button();
+                padding: 0.5rem 1rem;
+            }
+        }
+    }
+}
+// ADMIN DASHBOARD CONTAINER
+// =========================
+.adminContainer {
+    @include grid(1fr 4fr, 2rem);
+    height: 100vh;
+    > aside {
+        @include customScrollbar(none);
+        position: relative;
+        width: 100%;
+        max-width: 16rem;
+        background-color: $white;
+        padding: 1rem;
+        z-index: 42;
+        overflow-y: auto;
+        > section {
+            margin: 1rem;
+            > h5 {
+                @include heading(2px);
+                opacity: 0.8;
+                margin: 0.5rem 0rem;
+            }
+            > ul {
+                @include flex(column, unset, unset, 0.5rem);
+                > li {
+                    border-radius: 10px;
+                    padding: 0.5rem 1rem;
+                    > a {
+                        @include flex(row, unset);
+                    }
+                }
+            }
+        }
+    }
+    #hamburgerButton {
+        @include flex;
+        @include square(2.7rem);
+        @include button(none, 0, none, none, none, 2rem, 50%);
+        background-color: $white;
+        color: $blueButton;
+        position: fixed;
+        top: 0;
+        left: 1rem;
+        z-index: 41;
+        &:hover {
+            color: $blueButtonH;
+        }
+    }
+    #hamburgerCancel {
+        @include square(3rem);
+        @include button(none, 0, none, transparent, transparent, 2rem);
+        @include flex;
+        color: $blueButton;
+        position: absolute;
+        top: 0rem;
+        right: 0.5rem;
+        z-index: 9;
+        &:hover {
+            color: $blueButtonH;
+        }
+    }
+}
+// REACT TABLE
+// ===========
+.reactTable {
+    border-collapse: collapse;
+    width: 100%;
+    th,
+    td {
+        padding: 0.5rem;
+        text-align: left;
+        vertical-align: middle;
+    }
+    th {
+        font-weight: bold;
+        color: #0000009e;
+        font-size: 1.1rem;
+        font-weight: 400;
+        padding: 2rem 1rem;
+    }
+    tbody {
+        tr {
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.093);
+        }
+        td {
+            padding: 1rem;
+            img {
+                @include square(4rem);
+                object-fit: contain;
+                border-radius: 10px;
+            }
+            a {
+                text-decoration: none;
+                background-color: rgba(44, 104, 255, 0.455);
+                color: rgba(44, 104, 255);
+                padding: 0.25rem 0.5rem;
+                border-radius: 10px;
+            }
+            button {
+                width: 2rem;
+                height: 2rem;
+                font-size: 1.1rem;
+                border: none;
+                outline: none;
+                background-color: transparent;
+                cursor: pointer;
+                color: rgb(255, 44, 44);
+                &:hover {
+                    opacity: 0.6;
+                }
+            }
+            &:first-child {
+                border-left: none;
+            }
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+}
+// REACT TABLE BACKGROUND PROPERTIES FOR ALL PLACES EXCEPT DASHBOARD WIDGET
+.reactTableBox {
+    @include square(100%);
+    background-color: white;
+    padding: 1rem;
+    padding-bottom: 0;
+    overflow-y: auto;
+}
+// REACT TABLE PAGINATION
+// ======================
+.tablePagination {
+    @include flex;
+    padding: 2rem;
+    > button {
+        padding: 0.5rem 1rem;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: rgba(0, 115, 255);
+        color: white;
+        &:disabled {
+            background-color: rgba(0, 115, 255, 0.1);
+            cursor: not-allowed;
+        }
+    }
+}
+// PAGE NOT FOUND
+// ==============
+.notFoundPage {
+    @include flex(column, center, center);
+    height: 100vh;
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    h1 {
+        font-size: 6rem;
+        color: #ff0000;
+    }
+    p {
+        font-size: 2rem;
+        color: #000000;
+    }
+}
+
+// CHECKOUT
+// =========
+.checkoutForm {
+    width: 100%;
+    max-width: 400px;
+    margin: 4rem auto;
+    > form {
+        @include flex(column, flex-start, stretch, 2rem);
+        > button {
+            @include button(100%, 1rem, white, #057597, #005e7a);
+        }
+    }
+}

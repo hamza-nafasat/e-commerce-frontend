@@ -1,0 +1,105 @@
+.cartPage {
+    @include flex(row, stretch, unset, 4rem);
+    padding: 3rem 4rem 2rem;
+    min-height: 100vh;
+    max-height: 100vh;
+    > main {
+        @include customScrollbar(block, 2px);
+        background-color: $white;
+        border-radius: 5px;
+        padding: 1rem;
+        width: 70%;
+        overflow-y: auto;
+        > h2 {
+            @include heading(2px);
+            text-align: center;
+            margin-top: 30%;
+            user-select: none;
+        }
+    }
+    > aside {
+        @include flex(column, center, stretch, 1.5rem);
+        background-color: $white;
+        border-radius: 5px;
+        width: 30%;
+        padding: 2rem;
+        > input {
+            padding: 1rem;
+            border: 1px solid $black;
+            border-radius: 5px;
+            margin-top: 1rem;
+            outline: none;
+            font-size: 1.2rem;
+            // @include inputStyle;
+        }
+        > p {
+            font-size: 1rem;
+        }
+        > span {
+            margin-top: -1.5rem;
+            @include flex(row, center, center, 0.31rem);
+            > code {
+                align-self: flex-end;
+            }
+        }
+        > a {
+            @include button;
+            @include flex;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    }
+
+    .cartItem {
+        @include flex(row, flex-start, center, 3rem);
+        border-bottom: 2px solid $gray;
+        margin-bottom: 1rem;
+        padding: 1rem 2rem;
+        &:hover {
+            box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.2);
+            border-bottom: none;
+        }
+        > img {
+            @include square(5rem);
+            object-fit: contain;
+            border-radius: 10px;
+        }
+        > article {
+            @include flex(column, center, flex-start, 0.25rem);
+            > a {
+                font-size: 1rem;
+                color: $black;
+                &:hover {
+                    color: $blueButton;
+                }
+            }
+            > span {
+                font-weight: 700;
+            }
+        }
+        > div {
+            @include flex;
+            margin-left: auto;
+            user-select: none;
+            button {
+                @include button(none, unset, white, gray, black);
+                @include flex;
+                user-select: none;
+                @include square(2rem);
+                font-size: 1.6rem;
+                &:first-of-type {
+                    padding-bottom: 0.3rem;
+                    font-size: 1.9rem;
+                }
+            }
+        }
+        > button {
+            @include flex;
+            @include button(none, 1rem, none, transparent, transparent, 1.3rem);
+            margin-bottom: 0.25rem;
+            &:hover {
+                color: $red;
+            }
+        }
+    }
+}

@@ -1,0 +1,356 @@
+@media screen and (width < 1200px) {
+    .adminContainer {
+        overflow: auto;
+        .dashboard {
+            > .widgetContainer {
+                gap: 3rem;
+                row-gap: 2rem;
+                padding: 1rem;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                .widgetItem {
+                    min-width: 17rem;
+                }
+            }
+            > .graphAndInventoryContainer {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            > .transactionAndGenderChartContainer {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    }
+}
+@media screen and (width < 1100px) {
+    .adminContainer {
+        grid-template-columns: 1fr !important;
+        .dashboard {
+            > .widgetContainer {
+                gap: 1rem;
+                justify-content: center;
+                .widgetItem {
+                    min-width: 12rem;
+                }
+            }
+            > .graphAndInventoryContainer {
+                padding: 2rem;
+            }
+            > .transactionAndGenderChartContainer {
+                padding: 2rem;
+            }
+        }
+        .barChartsContainer,
+        .LineChartsContainer {
+            > section {
+                max-width: 800px;
+            }
+        }
+    }
+    .reactTableBox {
+        padding-left: 3rem !important;
+    }
+    // making all heading center
+    .adminContainer {
+        .barChartsContainer,
+        .PieChartsContainer,
+        .LineChartsContainer {
+            > h2 {
+                text-align: center;
+            }
+            > section {
+                > h3 {
+                    margin: 1rem 0;
+                    font-size: 1rem;
+                }
+            }
+        }
+        .couponContainer,
+        .tossCoinContainer,
+        .stopwatchContainer {
+            > h2 {
+                text-align: center;
+            }
+        }
+        .reactTableBox {
+            .heading {
+                text-align: center;
+            }
+        }
+        // bar chart and line chart
+        .barChartsContainer,
+        .LineChartsContainer {
+            > section {
+                width: 60%;
+            }
+        }
+    }
+}
+@media screen and (width < 1000px) {
+    .adminContainer {
+        .dashboard {
+            > .widgetContainer {
+                gap: 4rem;
+                row-gap: 2rem;
+                justify-content: center;
+                .widgetItem {
+                    min-width: 17rem;
+                }
+            }
+        }
+        .barChartsContainer,
+        .LineChartsContainer {
+            > section {
+                width: 70%;
+            }
+        }
+    }
+}
+@media screen and (width < 850px) {
+    .adminContainer {
+        .ProductsManagementContainer {
+            > section {
+                padding: 5rem 2rem;
+            }
+        }
+        .transactionManagementContainer {
+            flex-direction: column;
+            align-items: center;
+            > section {
+                max-width: 400px;
+                padding: 3rem 2rem;
+            }
+        }
+        .barChartsContainer,
+        .LineChartsContainer {
+            > section {
+                width: 80%;
+            }
+        }
+    }
+}
+@media screen and (width < 800px) {
+    .adminContainer {
+        .dashboard {
+            > .widgetContainer {
+                justify-content: space-around;
+                gap: 1rem;
+                .widgetItem {
+                    min-width: 16rem;
+                }
+            }
+        }
+        .graphAndInventoryContainer {
+            justify-content: center !important;
+        }
+        .barChartsContainer,
+        .LineChartsContainer {
+            > section {
+                width: 90%;
+            }
+        }
+    }
+}
+@media screen and (width < 700px) {
+    .adminContainer {
+        .ProductsManagementContainer {
+            flex-direction: column;
+            align-items: center;
+            > section {
+                max-width: 400px;
+                height: 100%;
+                padding: 5rem 0.5rem;
+                > strong {
+                    top: 2rem;
+                    left: 1rem;
+                }
+                > span {
+                    top: 2rem;
+                    right: 1rem;
+                }
+            }
+        }
+    }
+}
+@media screen and (width < 600px) {
+    .adminContainer {
+        .dashboard {
+            > .widgetContainer {
+                gap: 2rem;
+                .widgetItem {
+                    width: 20rem;
+                }
+            }
+        }
+        .barChartsContainer,
+        .PieChartsContainer,
+        .LineChartsContainer {
+            > section {
+                padding: 1.5rem;
+                > h3 {
+                    @include heading(1px);
+                    margin: 1rem 0;
+                    font-size: 0.8rem;
+                }
+            }
+        }
+        .reactTableBox {
+            padding-left: 0.5rem !important;
+        }
+        .barChartsContainer,
+        .LineChartsContainer {
+            > section {
+                width: 100%;
+            }
+        }
+    }
+}
+@media screen and (width < 500px) {
+    .adminContainer {
+        .couponContainer {
+            > section {
+                .couponForm {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    > fieldset {
+                        > label {
+                            font-size: 1rem;
+                            margin-inline-end: 0.2rem;
+                            margin-inline-start: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+        .graphAndInventoryContainer {
+            padding: 2rem 0.5rem !important;
+            > section {
+                border-radius: 10px;
+            }
+        }
+        .transactionAndGenderChartContainer {
+            padding: 0.5rem !important;
+        }
+        .barChartsContainer,
+        .LineChartsContainer {
+            > section {
+                padding: 1.2rem;
+            }
+        }
+    }
+}
+@media screen and (width < 450px) {
+    .adminContainer {
+        .revenueChart {
+            > h2 {
+                font-size: 1.35rem;
+            }
+        }
+    }
+    .checkoutForm {
+        max-width: 300px !important;
+    }
+}
+@media screen and (width < 400px) {
+    // all dashboard headings and padding
+    .adminContainer {
+        .graphAndInventoryContainer {
+            padding: 0.5rem !important;
+            > .revenueChart {
+                > h2 {
+                    @include heading(1px);
+                    font-size: 1.1rem;
+                }
+            }
+            > .inventoryDetails {
+                > h2 {
+                    @include heading(1px);
+                    font-size: 1rem;
+                }
+            }
+        }
+        .transactionAndGenderChartContainer {
+            padding: 0.5rem !important;
+            > .genderChart {
+                width: 24rem !important;
+                h2 {
+                    @include heading(1px);
+                    font-size: 1rem;
+                }
+            }
+            .reactTableContainer {
+                h2 {
+                    @include heading(1px);
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+    // charts and apps
+    .adminContainer {
+        .barChartsContainer,
+        .PieChartsContainer,
+        .LineChartsContainer {
+            > section {
+                padding: 0.5rem;
+                > h3 {
+                    margin: 0.8rem 0;
+                }
+            }
+        }
+        .PieChartsContainer {
+            > section {
+                > article {
+                    padding: 1rem;
+                    min-width: 300px;
+                    > h3 {
+                        margin: 1rem 0;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+        .stopwatchContainer {
+            > section {
+                .stopwatch {
+                    > button {
+                        margin: 2rem 0.8rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (width < 350px) {
+    .adminContainer {
+        .barChartsContainer,
+        .PieChartsContainer,
+        .LineChartsContainer {
+            > section {
+                padding: 0.5rem;
+            }
+        }
+        .couponContainer,
+        .stopwatchContainer {
+            > section {
+                .couponForm {
+                    > fieldset {
+                        > label {
+                            font-size: 0.8rem;
+                            margin-inline-end: 0.2rem;
+                            margin-inline-start: 1rem;
+                        }
+                        > input {
+                            @include square(0.9rem);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .checkoutForm {
+        max-width: 280px !important;
+    }
+}

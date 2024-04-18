@@ -1,0 +1,172 @@
+.dashboard {
+	padding-top: 1.5rem;
+	overflow-y: auto;
+	overflow-x: hidden;
+	// SEARCH BAR ARTICLE CONTAINER
+	// ============================
+	> .searchContainer {
+		@include flex(row, unset);
+		height: 4rem;
+		padding: 1rem;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.37);
+		> input {
+			@include inputStyle(100%, 1rem 0);
+			text-align: center;
+			margin-right: auto;
+			font-size: larger;
+		}
+		> svg {
+			font-size: 1.2rem;
+			opacity: 0.7;
+		}
+		> img {
+			@include square(2rem);
+			border-radius: 50%;
+		}
+	}
+	// WIDGET BOX ARTICLE CONTAINER
+	// ============================
+	> .widgetContainer {
+		@include flex(row, space-around, stretch, 0.4rem, wrap);
+		padding: 2rem 1rem 2rem 0;
+		> .widgetItem {
+			@include flex(row, space-between, stretch, 5px);
+			// min-width: 15rem;
+			background-color: white;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.132);
+			border-radius: 10px;
+			padding: 2rem;
+			> .widgetInfo {
+				> p {
+					opacity: 0.7;
+					font-size: 0.8rem;
+				}
+				> h4 {
+					font-size: 1.5rem;
+				}
+				> span {
+					@include flex(row, unset, center, 0.2rem);
+				}
+			}
+			> .widgetCircleBar {
+				@include square(5rem);
+				background-color: green;
+				position: relative;
+				flex: none;
+				border-radius: 50%;
+				display: grid;
+				place-items: center;
+				&::before {
+					@include square(4rem);
+					content: "";
+					position: absolute;
+					background-color: white;
+					border-radius: 100%;
+				}
+				> span {
+					position: relative;
+				}
+			}
+		}
+	}
+	// GRAPH CHART
+	// ==================================
+	> .graphAndInventoryContainer {
+		@include flex(row, unset, unset, 2rem);
+		padding: 0 2rem 2rem 0;
+		> section {
+			background-color: white;
+			border-radius: 10px;
+			box-shadow: 0 10px 10px rgba(0, 0, 0, 0.132);
+		}
+		> .revenueChart {
+			width: 100%;
+			padding: 1rem 1.5rem;
+			> h2 {
+				@include heading;
+				margin: 1rem 0 2rem 0.25rem;
+				text-align: center;
+			}
+		}
+		> .inventoryDetails {
+			@include flex(column, center, unset, 0);
+			width: 100%;
+			max-width: 20rem;
+			padding: 0rem 1rem 2rem 1rem;
+			> h2 {
+				@include heading;
+				margin: 1.5rem 0 2rem 0;
+				text-align: center;
+			}
+			> .inventoryItem {
+				@include flex(row, space-between);
+				padding-left: 0.5rem;
+				width: 100%;
+				padding: 1rem;
+				> header > h5 {
+					min-width: 3rem;
+					@include heading(1px, 300, unset);
+				}
+				> .inventoryBar {
+					width: 55%;
+					height: 0.5rem;
+					flex: none;
+					margin-left: auto;
+					border-radius: 20px;
+					overflow: hidden;
+					background-color: rgb(217, 217, 217);
+					> div {
+						border-radius: 20px;
+						height: 100%;
+					}
+				}
+				> span {
+					font-size: 0.8rem;
+					font-weight: 700;
+				}
+			}
+		}
+	}
+	// TRANSACTION TABLE
+	// ======================================
+	> .transactionAndGenderChartContainer {
+		@include flex(row, unset, unset, 2rem);
+		height: 30rem;
+		padding: 0 2rem 2rem 0;
+		> section {
+			width: 100%;
+			background-color: white;
+			border-radius: 10px;
+			box-shadow: 0 10px 10px rgba(0, 0, 0, 0.132);
+		}
+		> .genderChart {
+			width: 100%;
+			height: 28rem;
+			max-width: 20rem;
+			position: relative;
+			padding: 1rem;
+			> h2 {
+				@include heading;
+				text-align: center;
+				margin: 1.5rem 0 2rem 0;
+			}
+			> p {
+				@include posCenter;
+				font-size: 2rem;
+				color: rgba(0, 0, 0, 0.634);
+			}
+		}
+		> .transactionTable {
+			> .reactTableContainer {
+				padding: 1rem;
+				width: 100%;
+				overflow-x: auto;
+				> h2 {
+					@include heading;
+					text-align: center;
+					margin: 1.5rem 0 0 0;
+				}
+			}
+		}
+	}
+}

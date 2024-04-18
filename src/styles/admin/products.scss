@@ -1,0 +1,162 @@
+.createProductButton {
+    @include square(2.5rem);
+    @include flex(row, center, center, 0);
+    position: fixed;
+    right: 2rem;
+    top: 4rem;
+    background-color: rgb(201, 9, 9);
+    border-radius: 50%;
+    color: white;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+.newProductContainer,
+.ProductsManagementContainer,
+.transactionManagementContainer {
+    @include flex(row, center, center);
+    margin: 1.5rem;
+    > section {
+        @include flex(column, center, unset);
+        width: 100%;
+        height: 100%;
+        max-width: 500px;
+        max-height: 660px;
+        padding: 5rem;
+        overflow-y: auto;
+        position: relative;
+        border-radius: 5px;
+        background-color: white;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.216);
+        > h2 {
+            @include heading(2px);
+            text-align: center;
+        }
+        > img {
+            margin-top: 3rem;
+            @include square(100%);
+            object-fit: contain;
+            align-self: center;
+        }
+        > strong {
+            font-weight: 300;
+            position: absolute;
+            top: 1.7rem;
+            left: 2rem;
+        }
+        > span {
+            position: absolute;
+            top: 3rem;
+            right: 2rem;
+        }
+        > p {
+            text-align: center;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        > h3 {
+            text-align: center;
+            font-size: 2rem;
+        }
+        .trash {
+            @include flex;
+            border-radius: 100%;
+            border: none;
+            outline: none;
+            color: red;
+            font-size: 1.5rem;
+            cursor: pointer;
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            &:hover {
+                color: rgb(204, 18, 18);
+            }
+            &:active {
+                transform: scale(0.9);
+            }
+        }
+    }
+    > article {
+        // height: fit-content;
+        width: 100%;
+        height: 100%;
+        max-width: 400px;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px rgba(58, 56, 56, 0.216);
+        > form {
+            @include flex(column, unset, center, 1.5rem);
+            > h2 {
+                @include heading(2px, bold);
+                text-align: center;
+                margin-bottom: 0.5rem;
+            }
+            > img {
+                @include square(5rem);
+                object-fit: contain;
+                border-radius: 5px;
+            }
+            > div {
+                width: 100%;
+                position: relative;
+                > label {
+                    left: 0;
+                    top: -1rem;
+                    font-size: 0.8rem;
+                    position: absolute;
+                }
+                > input {
+                    @include inputStyle(100%, 0.9rem, unset, 1px solid rgba(13, 13, 13, 0.196));
+                    border-radius: 5px;
+                }
+            }
+            > button {
+                @include button;
+            }
+        }
+    }
+}
+.transactionManagementContainer {
+    > section {
+        @include flex(column, flex-start, center);
+        padding: 2rem;
+        > h2 {
+            @include heading(2px, bold);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+    }
+    > article {
+        > h2 {
+            @include heading(2px, bold);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        > h5 {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        > p {
+            margin: 0.1rem 0;
+        }
+        > button {
+            @include button;
+            margin-top: 1rem;
+        }
+    }
+}
+.transactionProductCard {
+    @include flex(row, flex-start, center);
+    > img {
+        @include square(4rem);
+        object-fit: contain;
+        border-radius: 5px;
+    }
+    > span {
+        margin-left: auto;
+    }
+}

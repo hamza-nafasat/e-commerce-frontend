@@ -1,0 +1,63 @@
+.productSearchPage {
+	@include flex(row, flex-start, stretch, 2rem);
+	background-color: $white;
+	padding: 1rem 2rem;
+	max-width: 100vw;
+	overflow-x: hidden;
+	min-height: 100vh;
+	max-height: 100vh;
+	> aside {
+		@include flex(column, flex-start, stretch, 0.3rem);
+		@include cardShadow;
+		min-width: 18rem;
+		padding: 2rem 1.5rem;
+		border-radius: 5px;
+		> h2 {
+			@include heading(2px);
+			text-align: center;
+			font-size: 1.8rem;
+		}
+		> div {
+			margin: 0.5rem 0;
+			> input,
+			> select {
+				@include inputStyle(100%, 0.7rem, white);
+				border: 1px solid $gray;
+				font-size: 1rem;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+		}
+	}
+	> main {
+		@include flex(column, unset, unset, 0rem);
+		width: 100%;
+		padding: 0, 2rem;
+		> h2 {
+			@include heading;
+			margin-bottom: 1rem;
+			text-align: center;
+			font-size: 1.8rem;
+		}
+		> input {
+			@include inputStyle(100%);
+			border-radius: 5px;
+			font-size: 1rem;
+			margin: 1rem 0;
+			border: 1px solid $gray;
+			display: block;
+		}
+		> .searchProductsList {
+			@include flex(row, unset, flex-start, 0.1rem, wrap);
+			row-gap: 0.3rem;
+			min-height: 24rem;
+			max-height: calc(100% - 10rem);
+		}
+		> .searchPagination {
+			@include flex;
+			> button {
+				@include button(4.5rem, 0.5rem);
+			}
+		}
+	}
+}

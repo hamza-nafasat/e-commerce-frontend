@@ -1,0 +1,99 @@
+@mixin heading($spacing: 3px, $weight: 300, $case: uppercase) {
+	letter-spacing: $spacing;
+	font-weight: $weight;
+	text-transform: $case;
+}
+
+@mixin flex($dir: row, $justify: center, $align: center, $gap: 1rem, $wrap: nowrap) {
+	display: flex;
+	flex-direction: $dir;
+	justify-content: $justify;
+	align-items: $align;
+	gap: $gap;
+	flex-wrap: $wrap;
+}
+
+@mixin grid($col: 1fr, $gap: 1rem, $row: unset) {
+	display: grid;
+	grid-template-columns: $col;
+	grid-template-rows: $row;
+	gap: $gap;
+}
+
+@mixin inputStyle($width: 100%, $padding: 1rem, $bgColor: inherit, $border: none) {
+	width: $width;
+	padding: $padding;
+	border: $border;
+	outline: none;
+	background-color: $bgColor;
+}
+
+@mixin posCenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin square($size: 1rem) {
+	height: $size;
+	width: $size;
+}
+
+@mixin button(
+	$width: 100%,
+	$padding: 1rem,
+	$color: $white,
+	$bg: $blueButton,
+	$hbg: $blueButtonH,
+	$size: 1.1rem,
+	$radius: 5px,
+	$border: none,
+	$outline: none
+) {
+	width: $width;
+	border: $border;
+	padding: $padding;
+	color: $color;
+	border-radius: $radius;
+	font-size: $size;
+	cursor: pointer;
+	background-color: $bg;
+	outline: $outline;
+	user-select: none;
+	&:hover {
+		background-color: $hbg;
+	}
+	&:active {
+		opacity: 0.8;
+	}
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.2;
+	}
+}
+
+@mixin customScrollbar($d: block, $w: 12px, $h: 12px, $color: $gray, $bg: $white, $hover: $gray) {
+	&::-webkit-scrollbar {
+		display: $d;
+		width: $w;
+		height: $h;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: $color;
+		border-radius: 6px;
+	}
+	&::-webkit-scrollbar-track {
+		background-color: $bg;
+	}
+	&::-webkit-scrollbar-thumb:hover {
+		background-color: $hover;
+	}
+}
+
+@mixin baseShadow() {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+@mixin cardShadow() {
+	box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.2);
+}

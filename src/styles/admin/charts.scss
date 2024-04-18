@@ -1,0 +1,50 @@
+.barChartsContainer,
+.PieChartsContainer,
+.LineChartsContainer {
+	overflow-y: auto;
+	padding: 1rem;
+	> h2 {
+		font-size: 1.5rem;
+	}
+	> section {
+		padding: 2rem;
+		max-width: 80%;
+		margin: 3rem auto;
+		border-radius: 10px;
+		background-color: white;
+		box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.216);
+		> h3 {
+			@include heading(2px);
+			font-size: 1.5rem;
+			margin: 2rem 0;
+			text-align: center;
+		}
+	}
+}
+// css only for pieChartContainer
+// =============================
+.PieChartsContainer {
+	> section {
+		background-color: transparent;
+		box-shadow: none;
+		max-width: 100%;
+		padding: 0;
+		margin: 0;
+		@include flex(row, space-around, unset, 1rem, wrap);
+		> article {
+			min-width: 24rem;
+			max-width: 24rem;
+			border-radius: 10px;
+			padding: 2rem;
+			margin: 4rem 0 0;
+			background-color: white;
+			box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.216);
+			> h3 {
+				@include heading(2px);
+				margin: 2rem 0;
+				font-size: 1.5rem;
+				text-align: center;
+			}
+		}
+	}
+}
