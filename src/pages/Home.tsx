@@ -27,7 +27,13 @@ const Home = () => {
     if (isError) toast.error("Error While Fetching Latest Products");
     return (
         <div className="homePage">
-            <img src={"/src/assets/img/cover.jpg"} alt="banner" loading="lazy" />
+            <img
+                src={
+                    "https://res.cloudinary.com/hamzanafasat/image/upload/v1713437972/mern-e-commerce/ol5yyuzpnua7ccjniz1h.jpg"
+                }
+                alt="banner"
+                loading="lazy"
+            />
             <section>
                 <h2>Latest Products</h2>
                 <Link to={"/search"} className="findMore" aria-label="more products link">
