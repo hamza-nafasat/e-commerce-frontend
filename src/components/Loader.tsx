@@ -1,8 +1,12 @@
 const Loader = () => {
     return (
-        <article className="loader-container">
-            <div className="loader"></div>
-        </article>
+        <div className="loading">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     );
 };
 
